@@ -49,4 +49,18 @@
       width: 10%;
     }
   }
+
+  @media screen and (width: 800px) {
+    width: 40vw;
+
+    &:hover {
+      .image {
+        opacity: unset;
+      }
+
+      button {
+        opacity: unset;
+      }
+    }
+  }
 }

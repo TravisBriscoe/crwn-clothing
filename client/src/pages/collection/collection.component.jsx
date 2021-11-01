@@ -6,7 +6,9 @@ import CollectionItem from '../../components/collection-item/collection-item.com
 
 import { selectCollection } from '../../redux/shop/shop.selectors';
 
-import './collection.styles.scss';
+// import './collection.styles.scss';
+
+import { CollectionContainer, CollectionItems, CollectionTitle } from './collection.styles';
 
 const CollectionPage = () => {
   const { collectionId } = useParams();
@@ -14,14 +16,14 @@ const CollectionPage = () => {
   const { title, items } = collection;
   
   return  (
-    <div className='collection-page'>
-      <h2 className='title'>{title}</h2>
-      <div className='items'>
+    <CollectionContainer className='collection-page'>
+      <CollectionTitle className='title'>{title}</CollectionTitle>
+      <CollectionItems className='items'>
         {
           items.map(item => (<CollectionItem key={item.id} item={item} />))
         }
-      </div>
-    </div>
+      </CollectionItems>
+    </CollectionContainer>
   )
 };
 
